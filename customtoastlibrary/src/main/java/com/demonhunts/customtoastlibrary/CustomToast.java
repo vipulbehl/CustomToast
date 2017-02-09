@@ -1,20 +1,17 @@
 package com.demonhunts.customtoastlibrary;
 
 import android.content.Context;
-import android.graphics.drawable.Drawable;
+import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import static android.widget.Toast.LENGTH_LONG;
 import static android.widget.Toast.LENGTH_SHORT;
-
-/**
- * Created by Vipul on 05-Feb-17.
- */
 
 public class CustomToast {
     private Context context;
@@ -22,7 +19,8 @@ public class CustomToast {
     private Toast toast;
     private TextView textView;
     private ImageView imageView;
-    private boolean isBold;
+    private LinearLayout layout;
+    private boolean isIconSet;
 
     public CustomToast(Context context,String message) {
         this.context = context;
@@ -35,6 +33,7 @@ public class CustomToast {
         textView.setText(message);
 
         imageView = (ImageView) view.findViewById(R.id.imageView);
+        layout = (LinearLayout) view.findViewById(R.id.parentLayout);
     }
 
     public void setTextSize(float size){
@@ -44,19 +43,23 @@ public class CustomToast {
         textView.setTextColor(color);
     }
 
-    public void setBold(boolean isBold){
-        this.isBold = isBold;
+    public void setBold(){
+        textView.setTypeface(textView.getTypeface(), Typeface.BOLD);
+    }
+
+    public void setItalics(){
+        textView.setTypeface(textView.getTypeface(), Typeface.ITALIC);
     }
 
     public void setBackgroundColor(int color){
-        textView.setBackgroundResource(R.drawable.rounded_corner);
-        GradientDrawable d = (GradientDrawable) textView.getBackground();
+        layout.setBackgroundResource(R.drawable.rounded_corner);
+        GradientDrawable d = (GradientDrawable) layout.getBackground();
         d.setColor(color);
     }
 
-    public CustomToast setToastIcon(Drawable image){
-        imageView.setImageDrawable(image);
-        return null;
+    public void setToastIcon(int image){
+        imageView.setImageDrawable(context.getResources().getDrawable(image));
+        isIconSet = true;
     }
 
     public void setDuration(String duration){
@@ -69,6 +72,8 @@ public class CustomToast {
     }
 
     public void showToast(){
+        if(!isIconSet)
+            imageView.setVisibility(View.GONE);
         toast.setView(view);
         toast.show();
     }
