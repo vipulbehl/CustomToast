@@ -15,7 +15,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         CustomToast customToast = new CustomToast(getApplicationContext(),"hello");
-        customToast.backgroundColor(Color.BLUE);
+        customToast.setTextColor(Color.RED);
+        customToast.setBackgroundColor(Color.GREEN);
+        customToast.setTextSize(50);
         customToast.showToast();
     }
 }
