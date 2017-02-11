@@ -21,11 +21,10 @@ public class MainActivity extends AppCompatActivity {
         success.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CustomToast customToast = new CustomToast(getApplicationContext(),"hello");
+                CustomToast customToast = new CustomToast(getApplicationContext(),"Success");
                 customToast.setTextColor(Color.BLACK);
-                customToast.setBackgroundColor(R.color.success);
+                customToast.setBackgroundColor(Color.rgb(136,250,136));
                 customToast.setTextSize(30);
-                customToast.setBold();
                 customToast.setToastIcon(R.drawable.success);
                 customToast.showToast();
             }
@@ -37,9 +36,9 @@ public class MainActivity extends AppCompatActivity {
         warning.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CustomToast customToast = new CustomToast(getApplicationContext(),"hello");
-                customToast.setTextColor(Color.RED);
-                customToast.setBackgroundColor(Color.GREEN);
+                CustomToast customToast = new CustomToast(getApplicationContext(),"Warning");
+                customToast.setTextColor(Color.BLACK);
+                customToast.setBackgroundColor(Color.rgb(255,222,97));
                 customToast.setTextSize(30);
                 customToast.setBold();
                 customToast.setToastIcon(R.drawable.warning);
@@ -53,11 +52,10 @@ public class MainActivity extends AppCompatActivity {
         sync.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CustomToast customToast = new CustomToast(getApplicationContext(),"hello");
-                customToast.setTextColor(Color.RED);
-                customToast.setBackgroundColor(Color.GREEN);
+                CustomToast customToast = new CustomToast(getApplicationContext(),"Sync");
+                customToast.setTextColor(Color.BLACK);
+                customToast.setBackgroundColor(Color.CYAN);
                 customToast.setTextSize(30);
-                customToast.setBold();
                 customToast.setToastIcon(R.drawable.sync);
                 customToast.showToast();
             }
@@ -69,11 +67,10 @@ public class MainActivity extends AppCompatActivity {
         error.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CustomToast customToast = new CustomToast(getApplicationContext(),"hello");
-                customToast.setTextColor(Color.RED);
-                customToast.setBackgroundColor(Color.GREEN);
+                CustomToast customToast = new CustomToast(getApplicationContext(),"Error");
+                customToast.setTextColor(Color.BLACK);
+                customToast.setBackgroundColor(Color.rgb(255,87,79));
                 customToast.setTextSize(30);
-                customToast.setBold();
                 customToast.setToastIcon(R.drawable.error);
                 customToast.showToast();
             }
@@ -85,27 +82,25 @@ public class MainActivity extends AppCompatActivity {
         info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CustomToast customToast = new CustomToast(getApplicationContext(),"hello");
-                customToast.setTextColor(Color.RED);
+                CustomToast customToast = new CustomToast(getApplicationContext(),"Info");
+                customToast.setTextColor(Color.BLACK);
                 customToast.setBackgroundColor(Color.GREEN);
                 customToast.setTextSize(30);
-                customToast.setBold();
                 customToast.setToastIcon(R.drawable.info);
                 customToast.showToast();
             }
         });
 
 
-        //Sync Button Resource
+        //Normal Button Resource
         Button normal = (Button)findViewById(R.id.normal);
         normal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                CustomToast customToast = new CustomToast(getApplicationContext(),"hello");
-                customToast.setTextColor(Color.RED);
-                customToast.setBackgroundColor(Color.GREEN);
+                CustomToast customToast = new CustomToast(getApplicationContext(),"Normal");
+                customToast.setTextColor(Color.BLACK);
+                customToast.setBackgroundColor(Color.rgb(98,179,182));
                 customToast.setTextSize(30);
-                customToast.setBold();
                 customToast.showToast();
             }
         });
