@@ -19,6 +19,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+    lintOptions {
+        abortOnError false
+    }
 }
 
 dependencies {
@@ -29,3 +33,32 @@ dependencies {
     compile 'com.android.support:appcompat-v7:24.2.1'
     testCompile 'junit:junit:4.12'
 }
+
+ext {
+    bintrayRepo = 'CustomToast'
+    bintrayName = 'custom-toast'
+
+    publishedGroupId = 'com.github.vipul'
+    libraryName = 'CustomToast'
+    artifact = 'customtoastlibrary'
+
+    libraryDescription = 'A simple library to customize your toast messages.'
+
+    // Your github repo link
+    siteUrl = 'https://github.com/vipulbehl/CustomToast'
+    gitUrl = 'https://github.com/vipulbehl/CustomToast.git'
+    githubRepository= 'vipulbehl/CustomToast'
+
+    libraryVersion = '1.0'
+
+    developerId = 'vipulbehl'
+    developerName = 'Vipul Behl'
+    developerEmail = 'vipulbehl94@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/installv1.gradle'
+apply from: 'https://raw.githubusercontent.com/nisrulz/JCenter/master/bintrayv1.gradle'
